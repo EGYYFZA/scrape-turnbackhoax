@@ -1,0 +1,13 @@
+#VENV
+cd C:\Users\ACER\OneDrive\Desktop\scrape_turnbackhoax
+ .\.venv\Scripts\activate.bat
+
+python -m pip install -U pip
+python -m pip install httpx[http2] selectolax lxml tqdm python-dateutil tenacity
+
+# run 12k posting, mundur 120 bulan (10 tahun), sopan
+python scrape_turnbackhoax.py --mode pages --start-page 1 --pages 600 --budget 24000 ^ --max 12000 --out turnbackhoax.csv --concurrency 2
+
+# alternatif: per-chunk 12 bulan biar harvesting terasa cepat
+python scrape_turnbackhoax.py --max 12000 --out turnbackhoax.csv --concurrency 2 --months 12 --start 2025-09
+python scrape_turnbackhoax.py --max 12000 --out turnbackhoax.csv --concurrency 2 --months 12 --start 2024-09
