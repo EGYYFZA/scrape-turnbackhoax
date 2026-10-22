@@ -1,0 +1,22 @@
+
+# Local configuration and generated files
+.env
+.env.*
+!.env.example
+!.env.sample
+node_modules/
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+*.tsbuildinfo
+.vercel/
+*.log
+.DS_Store
+Thumbs.db
+
+# Local crawl state
+*.sqlite
+*.sqlite-*
+/urls_seen*.txt
+/venv.venv
