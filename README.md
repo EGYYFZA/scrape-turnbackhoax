@@ -1,18 +1,21 @@
-# TurnBackHoax Dataset Collector
+<img src=".github/media/cover.png" alt="TurnBackHoax Collector — research data tools" width="1280">
 
-A Python command-line project for collecting fact-checking articles and repairing historical article URLs.
+# TurnBackHoax Collector
 
-## Stack
+A Python collector for fact-checking articles, with archive selection, CSV export and historical-URL repair.
 
-HTTPX, Selectolax, and python-dateutil.
+**Python · HTTPX · Selectolax** · Command-line research tool
+
+## Tools
+
+| Script | Purpose |
+| :-- | :-- |
+| [scrape_turnbackhoax.py](scrape_turnbackhoax.py) | Collect article records in automatic or archive mode |
+| [repair_turnbackhoax_urls.py](repair_turnbackhoax_urls.py) | Map historical article URLs to repaired URLs |
 
 ## Setup
 
-```sh
-python -m venv .venv
-```
-
-Activate the environment, then install dependencies:
+Create and activate a Python virtual environment, then run:
 
 ```sh
 python -m pip install -r requirements.txt
@@ -20,12 +23,19 @@ python scrape_turnbackhoax.py --help
 python repair_turnbackhoax_urls.py --help
 ```
 
-A small collection run:
+A small collection example:
 
 ```sh
 python scrape_turnbackhoax.py --mode auto --max 10 --concurrency 1 --out sample.csv
 ```
 
-Review the source site's access rules and content permissions before collecting or redistributing articles. Existing datasets are research inputs, not a grant of rights to the source articles. Virtual environments and crawl state stay local.
+Archive mode also accepts a start month and the number of months to inspect.
+Use the script's help output for the full option list.
 
+## Responsible use
+
+Review the source site's access rules and content permissions before collecting
+or redistributing articles. Keep concurrency modest and use only the amount of
+data needed for your research. Included datasets do not grant rights to the
+original articles. Crawl state and virtual environments stay local.
 See [SECURITY.md](SECURITY.md).
