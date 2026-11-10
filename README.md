@@ -1,5 +1,3 @@
-<img src=".github/media/cover.png" alt="TurnBackHoax Collector — research data tools" width="1280">
-
 # TurnBackHoax Collector
 
 A Python collector for fact-checking articles, with archive selection, CSV export and historical-URL repair.
